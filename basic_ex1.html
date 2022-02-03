@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic exercise 1</title>
+  <style>
+    input {margin: 2px}
+  </style>
+
+</head>
+
+<body>
+
+  <form>
+    <input type="text" id="firstname"><br>
+    <input type="text" id="lastname"><br>
+    <input type="text" id="age"><br>
+    <input type="button" id="btn" value="Submit">
+  </form>
+
+  <div id="display"></div>
+
+  <script>
+    
+    function submit() {
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      var age = document.getElementById("age").value;
+      var display = document.getElementById("display");
+
+      display.innerHTML = `${firstname} ${lastname}, ${age}`
+
+      if (firstname.length > 5) {
+        display.style.color = "green"
+      } else {
+        display.style.color = "red"
+      }
+    }    
+
+    document.getElementById("btn").addEventListener("click", submit) 
+    </script>
+
+</body>
+
+</html>

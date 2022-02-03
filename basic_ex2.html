@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic exercise 2</title>
+  <style>
+    input, select, div {
+      margin: 2px;
+      width: 150px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <form>
+    <input type="text" id="firstname" placeholder="First name"><br>
+    <input type="text" id="lastname" placeholder="Last name"><br>
+    <input type="text" id="age" placeholder="Age"><br>
+    <select id="profession" name="profession">
+      <option value="IT">IT</option>
+      <option value="Hospitality">Hospitality</option>
+    </select><br>
+    <input type="button" id="btn" value="Submit">
+  </form>
+
+  <div id="display1"></div>
+  <div id="display2"></div>
+
+  <script>
+
+    function submit() {
+      var firstname = document.getElementById("firstname").value;
+      var lastname = document.getElementById("lastname").value;
+      var age = document.getElementById("age").value;
+      var profession = document.getElementById("profession").value;
+      var display1 = document.getElementById("display1");
+      var display2 = document.getElementById("display2");
+
+      display1.innerHTML = `${firstname} ${lastname}, ${age}<br>`;
+      display2.innerHTML = `${profession}`;
+
+      if (firstname.length > 5) {
+        display1.style.color = "green";
+      } else {
+        display1.style.color = "red";
+      }
+
+      if (profession == "IT") {
+        display2.style.backgroundColor = "purple";
+      } else if (profession == "Hospitality") {
+        display2.style.backgroundColor = "yellow";
+      }
+    }
+
+    document.getElementById("btn").addEventListener("click", submit) 
+  </script>
+
+</body>
+
+</html>
