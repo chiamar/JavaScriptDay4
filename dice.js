@@ -20,7 +20,6 @@ function roll(player) {
   var path = `img/dice${dice}.png`;
 
   if (player == "dice1") {
-    reset();
     dice1.title = dice;
     dice1.src = path;
     roll1.style.display = "none";
