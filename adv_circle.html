@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    div {
+      margin:10px;
+    }
+
+    #circle {
+      height: 80vw;
+      width: 80vw;
+      border-radius: 50%;
+      background-color: white;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      border: 1px solid black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="circle"></div>
+  <div id="message">&nbsp;</div>
+  <button id="btn" type="submit">Reset</button>
+  
+  <script>
+    var message = document.getElementById("message")
+    var circle = document.getElementById("circle")
+    var btn = document.getElementById("btn")
+
+    function over() {
+      message.innerHTML = "You are in the circle"
+    }
+    function out() {
+      message.innerHTML = "You are outside of the circle";
+    }
+    function bgcolor(color) {
+      circle.style.backgroundColor = color;
+    }
+
+    circle.addEventListener("mouseover", over)
+    circle.addEventListener("mouseout", out)
+    circle.addEventListener("click", () => bgcolor("gray"))
+    circle.addEventListener("dblclick", () => bgcolor("blue"))
+    btn.addEventListener("click", () => bgcolor("white"))
+
+  </script>
+
+</body>
+
+</html>
