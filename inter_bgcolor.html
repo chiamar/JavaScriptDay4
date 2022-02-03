@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Background</title>
+  <style>
+
+    input, #color {
+      background-color: white;
+      border: 0;
+      width: 200px;
+      margin: 0;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <input type="button" id="btn" value="Change Background Color">
+  <div id="color"></div>
+
+  
+  <script>
+
+
+    function change() {
+      var r = Math.floor(Math.random() * 256);
+      var g = Math.floor(Math.random() * 256);
+      var b = Math.floor(Math.random() * 256);
+      var color = `rgb(${r}, ${g}, ${b})`;
+
+      document.body.style.backgroundColor = color;
+      document.getElementById("color").innerHTML = color;
+    }
+
+    document.getElementById("btn").addEventListener("click", change) 
+
+  </script>
+
+</body>
+
+</html>
